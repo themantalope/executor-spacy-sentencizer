@@ -3,6 +3,15 @@ from typing import Any, Dict, Optional, Sequence
 from docarray import Document, DocumentArray
 from spacy.lang.en import English
 import re
+import subprocess
+
+cmd = ['jina', '-vf']
+proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+so, se = proc.communicate()
+
+print("command: ", " ".join(cmd))
+print('output: ', so.decode('utf-8'))
+print("error: ", se.decode('utf-8'))
 
 
 class SpacySentencizer(Executor):
