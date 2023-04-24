@@ -19,7 +19,7 @@ class SpacySentencizer(Executor):
     Splits text at doc-level into sentences using spaCy's sentencizer and stores as doc.chunks.
     """
 
-    def __init__(self, min_sent_len=20, max_sent_len=77, max_len_overlap=0.5, traversal_paths: str = "@r", *args, **kwargs):
+    def __init__(self, min_sent_len=3, max_sent_len=256, max_len_overlap=0.5, traversal_paths: str = "@r", *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.min_sent_len = min_sent_len
         self.traversal_paths = traversal_paths
